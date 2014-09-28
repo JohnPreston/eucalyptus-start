@@ -29,7 +29,7 @@ Role Variables
 
 | Name | Default | Description | Note
 |--- |--- |--- |---
-| networking_mode | None | Eucalyptus networking mode | Must be the same for all roles
+| networking_mode | MANAGED-NOVLAN | Eucalyptus networking mode | Must be the same for all roles
 
 Dependencies
 ------------
@@ -38,6 +38,17 @@ Dependencies
 
 Example Playbook
 ----------------
+
+```
+
+- hosts:
+  all
+  roles:
+  - JohnPreston.eucalyptus-start
+
+```
+
+In a playbook
 
 ```
 

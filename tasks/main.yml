@@ -5,19 +5,27 @@
   service: name=eucalyptus-cloud state=started
   when:
   - inventory_hostname in groups.java_fe
+  tags:
+  - services_start
 
 - name: Start CC
   service: name=eucalyptus-cc state=started
   when:
   - inventory_hostname in groups.cc
+  tags:
+  - services_start
 
 - name: Start NC
   service: name=eucalyptus-nc state=started
   when:
   - inventory_hostname in groups.nc
+  tags:
+  - services_start
 
 - name: Start eucanetd
   service: name=eucanetd state=started
   when:
   - inventory_hostname in groups.nc
   - networking_mode == "EDGE"
+  tags:
+  - services_start

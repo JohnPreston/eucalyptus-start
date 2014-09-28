@@ -1,4 +1,6 @@
 ---
 # defaults file for eucalyptus-start
 
-networking_mode: MANAGED
+networking_mode: MANAGED-NOVLAN
+use_vlans: false
+
