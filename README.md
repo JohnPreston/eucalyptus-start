@@ -27,7 +27,9 @@ hosts:
 Role Variables
 --------------
 
-None
+| Name | Default | Description | Note
+|--- |--- |--- |---
+| networking_mode | None | Eucalyptus networking mode | Must be the same for all roles
 
 Dependencies
 ------------
@@ -42,6 +44,8 @@ Example Playbook
 - hosts: all
   roles:
   - JohnPreston.eucalyptus-start
+  vars:
+  - networking_mode: EDGE
 
 ```
 
