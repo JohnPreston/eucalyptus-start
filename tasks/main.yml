@@ -1,0 +1,23 @@
+---
+# tasks file for eucalyptus-start
+
+- name: Start Cloud
+  service: name=eucalyptus-cloud state=started
+  when:
+  - inventory_hostname in groups.java_fe
+
+- name: Start CC
+  service: name=eucalyptus-cc state=started
+  when:
+  - inventory_hostname in groups.cc
+
+- name: Start NC
+  service: name=eucalyptus-nc state=started
+  when:
+  - inventory_hostname in groups.nc
+
+- name: Start eucanetd
+  service: name=eucanetd state=started
+  when:
+  - inventory_hostname in groups.nc
+  - networking_mode == "EDGE"
